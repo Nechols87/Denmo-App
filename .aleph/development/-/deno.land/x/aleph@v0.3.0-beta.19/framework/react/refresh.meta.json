@@ -1,0 +1,12 @@
+{
+  "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/refresh.ts",
+  "deps": [
+    {
+      "specifier": "https://esm.sh/react-refresh@0.10.0/runtime"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/shared/util.ts"
+    }
+  ],
+  "sourceHash": "1bb1d4b6682fdac121762d006d95e4ec7e0b627b"
+}

@@ -1,14 +1,12 @@
 // import { useDeno } from 'aleph/react'
 import React, {useState, useEffect} from 'react';
-
-
-
-
+import useFetch from '../hooks/useFetch.tsx';
 
 export default function Home () {
-  // const version = useDeno(() => Deno.version.deno)
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
 
   useEffect(() => {
     getData()
@@ -17,8 +15,8 @@ export default function Home () {
   const getData =  () => {
     fetch('http://localhost:3000/api/products')
     .then((res) => res.json())
-    // .then((data) => console.log(data))
-    .then((data) => setData(data.data))
+    .then((data) => console.log(data))
+    // .then((data) => setData(data.data))
     .then(() => setLoading(true))
     // console.log(json);
     

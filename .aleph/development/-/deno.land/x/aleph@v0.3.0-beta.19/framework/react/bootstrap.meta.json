@@ -1,0 +1,27 @@
+{
+  "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/bootstrap.ts",
+  "deps": [
+    {
+      "specifier": "https://esm.sh/react@17.0.2"
+    },
+    {
+      "specifier": "https://esm.sh/react-dom@17.0.2"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/core/module.ts"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/core/redirect.ts"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/core/routing.ts"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/components/Router.ts"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/pagedata.ts"
+    }
+  ],
+  "sourceHash": "86950a77c25034fc66d209fada698f3495c7412c"
+}

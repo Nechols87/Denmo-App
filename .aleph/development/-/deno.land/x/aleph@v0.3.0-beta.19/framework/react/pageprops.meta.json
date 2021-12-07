@@ -1,0 +1,12 @@
+{
+  "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/pageprops.ts",
+  "deps": [
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/components/ErrorBoundary.ts"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/react/helper.ts"
+    }
+  ],
+  "sourceHash": "97395b93cce8e60803659173b38a0a4dc2c7e217"
+}

@@ -18,10 +18,11 @@ const addProduct = async ({ request, response }: {request: any, response: any })
         try {
         await client.connect()
          
-        const result = await client.queryArray("INSERT INTO products(name, description, price) VALUES($1,$2,$3)", 
+        const result = await client.queryArray("INSERT INTO products(name, description, price, image) VALUES($1,$2,$3,$4)", 
         product.name, 
         product.description,
-        product.price)
+        product.price,
+        product.image)
 
         response.status = 201
         response.body = {

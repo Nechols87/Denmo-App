@@ -1,0 +1,7 @@
+{
+  "aleph": "0.3.0-beta.19",
+  "deno": "1.16.4",
+  "compiler": "464213b80a73316258dac10651d61470e38010ac",
+  "buildTarget": "es2015",
+  "buildBrowsers": ""
+}

@@ -1,0 +1,12 @@
+{
+  "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/core/redirect.ts",
+  "deps": [
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/shared/util.ts"
+    },
+    {
+      "specifier": "https://deno.land/x/aleph@v0.3.0-beta.19/framework/core/events.ts"
+    }
+  ],
+  "sourceHash": "255044aa5f0a165bf3ccdaa745a17d195afcc18b"
+}
