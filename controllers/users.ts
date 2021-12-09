@@ -1,8 +1,11 @@
 import { Client } from "https://deno.land/x/postgres/mod.ts"
 import * as bcrypt from "https://deno.land/x/bcrypt@v0.2.4/mod.ts";
+import {create, verify, decode } from "https://deno.land/x/djwt@v2.4/mod.ts"
+import "https://deno.land/x/dotenv/load.ts";
 import { dbCreds } from '../config.ts'
 
 const client = new Client(dbCreds);
+
 
 const addUser = async ({ request, response }: {request: any, response: any }) => {
    
@@ -48,7 +51,7 @@ const addUser = async ({ request, response }: {request: any, response: any }) =>
 }
 
 
-const loginUser = async ({ request, response }: {request: any, response: any }) => {
+const loginUser = async ({ request, response, cookies }: {request: any, response: any, cookies: any }) => {
     const body = await request.body();
     const user = await body.value
     const { username, password } = user;
@@ -66,11 +69,22 @@ const loginUser = async ({ request, response }: {request: any, response: any }) 
         const isValid = await bcrypt.compare(password, result.rows[0].password);
         console.log(`isValid: ${isValid}`);    
         if (isValid === true){
-          response.status = 201
-          response.body = {
-            success: true,
-            data: "You have entered a correct password"
-          }
+            const key = await crypto.subtle.generateKey(
+                { name: "HMAC", hash: "SHA-512" },
+                true,
+                ["sign", "verify"],
+              );
+           
+            
+            const jwt = await create({alg: "HS512", typ: "JWT"}, {user: result.rows[0].username}, key);
+             
+            cookies.set('jwt', jwt, {httpOnly: true});
+            
+            response.status = 201
+            response.body = {
+                message: 'success',
+                data: "You have entered a correct password"
+            };
         }
         else {
           response.body = {
@@ -90,5 +104,57 @@ const loginUser = async ({ request, response }: {request: any, response: any }) 
   }  
 }
 
+const jwtLogin = async ({response, cookies}: { response: any, cookies: any }) => {
+    const jwt = await cookies.get("jwt") || '';
+    console.log(typeof jwt)
+    if (!jwt) {
+        response.body = 401;
+        response.body = {
+            message: 'unauthenticated'
+        };
+        return;
+    }
 
-export { addUser, loginUser }
+ 
+
+    // const [ header, payload, signature] = await decode(jwt);
+    const decoded: any = await decode(jwt);
+    console.log(decoded);
+    const user: any[] = decoded[1].user
+    console.log(user)
+    // const result = await verify(jwt, key);
+    
+
+    // const result = await verify(jwt, key);
+    // console.log(`payload ${payload}`)
+    if (!user) {
+        response.body = 401;
+        response.body = {
+            message: 'unauthenticated'
+        };
+        return;
+    }
+
+    const result = await client.queryArray(`SELECT * FROM registration WHERE username = '${ user }'`)
+    if(!result) {
+        response.body = 401;
+        response.body = {
+            message: 'unauthenticated'
+        };
+        return;
+    }
+    response.body = {data: "still working"}
+    return
+    
+}
+const logout = async ({response, cookies}: {response: any, cookies: any}) => {
+    cookies.delete('jwt');
+
+    response.body = {
+        message: 'success'
+    }
+}
+
+
+
+export { addUser, loginUser, jwtLogin,  logout}
