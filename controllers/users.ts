@@ -1,6 +1,6 @@
 import { Client } from "https://deno.land/x/postgres/mod.ts"
 import * as bcrypt from "https://deno.land/x/bcrypt@v0.2.4/mod.ts";
-import {create, verify, decode } from "https://deno.land/x/djwt@v2.4/mod.ts"
+import {create, decode } from "https://deno.land/x/djwt@v2.4/mod.ts"
 import "https://deno.land/x/dotenv/load.ts";
 import { dbCreds } from '../config.ts'
 

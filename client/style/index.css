@@ -1,11 +1,12 @@
 @import url('./reset.css');
 
 main {
-  display: flex;
+  /* display: flex; */
   /* align-items: center; */
-  justify-content: center;
+  /* justify-content: center; */
+  width: 100vw;
   height: 100vh;
-}
+ }
 
 .page h1 {
   margin: 0;
@@ -16,7 +17,46 @@ main {
   color: #000;
 }
 
-.page h1 strong {
+.page h3 {
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 30% [col-start]);
+  grid-row-gap: 3px;
+  grid-column-gap: 3px;
+  padding: 20px 0px 20px 0px;
+}
+
+.product-card {
+  border: 1px solid #000 ;
+  border-radius: 4px;
+  /* justify-content: center; */
+
+}
+
+.product-card * {
+  text-align: center;
+  font-size: small;
+}
+
+.checkout-btn {
+  border: 1px solid black;
+  width: 15%;
+  height: 10%;
+}
+
+.cart-btn {
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.cart-btn-container { 
+  display: flex;
+  justify-content: space-evenly;
+}
+/* .page h1 strong {
   font-weight: 700;
 }
 
@@ -64,4 +104,4 @@ main {
   margin-top: 30px;
   font-size: 14px;
   color: #999;
-}
+} */
