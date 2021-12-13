@@ -79,7 +79,7 @@ const loginUser = async ({ request, response, cookies }: {request: any, response
             const jwt = await create({alg: "HS512", typ: "JWT"}, {user: result.rows[0].username}, key);
              
             cookies.set('jwt', jwt, {httpOnly: true});
-            
+            console.log(jwt)
             response.status = 201
             response.body = {
                 message: 'success',

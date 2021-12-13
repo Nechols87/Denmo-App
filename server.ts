@@ -10,7 +10,8 @@ const app = new Application()
 
 app.use(oakCors({
     credentials: true,
-    origin: /^.+localhost:(3000|4200|8080)$/,
+    origin: /^.+localhost:(3000|8080)$/
+    // origin: "http://localhost:3000" 
 }))
 app.use(router.routes())
 app.use(router.allowedMethods())
