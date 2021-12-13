@@ -2,7 +2,7 @@
 import React, {FunctionComponent, ReactElement, ReactNode} from 'react';
 import * as stripeJs from '../js/types/stripe-js/index.d.ts';
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import {usePrevious} from '../utils/usePrevious.ts';
 import {
@@ -197,10 +197,15 @@ export const Elements: FunctionComponent<ElementsProps> = (({
   );
 }) as FunctionComponent<ElementsProps>;
 
-Elements.propTypes = {
-  stripe: PropTypes.any,
-  options: PropTypes.object as any,
-};
+// Elements.propTypes = {
+//   stripe: PropTypes.any,
+//   options: PropTypes.object as any,
+// };
+
+interface Elements {
+  stripe: any,
+  options: object 
+}
 
 export const useElementsContextWithUseCase = (
   useCaseMessage: string
@@ -241,6 +246,10 @@ export const ElementsConsumer: FunctionComponent<ElementsConsumerProps> = ({
   return children(ctx) as ReactElement | null;
 };
 
-ElementsConsumer.propTypes = {
-  children: PropTypes.func.isRequired,
-};
+// ElementsConsumer.propTypes = {
+//   children: PropTypes.func.isRequired,
+// };
+
+interface ElementsConsumer {
+  children: Function
+}

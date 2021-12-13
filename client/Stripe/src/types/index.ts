@@ -447,7 +447,7 @@ export type AfterpayClearpayMessageElementComponent = FunctionComponent<
   AfterpayClearpayMessageElementProps
 >;
 
-declare module '@stripe/stripe-js' {
+declare module '@stripe/stripe-js' { 
   interface StripeElements {
     /**
      * Requires beta access:

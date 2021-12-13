@@ -1,4 +1,4 @@
-import createElementComponent from '../../Stripe/src/components/createElementComponent.tsx';
+import createElementComponent from './components/createElementComponent.tsx';
 import {
   AuBankAccountElementComponent,
   CardElementComponent,

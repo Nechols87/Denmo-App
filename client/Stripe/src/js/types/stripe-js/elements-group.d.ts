@@ -31,7 +31,7 @@ import {
     StripeAffirmMessageElementOptions,
     StripeAfterpayClearpayMessageElement,
     StripeAuBankAccountElementOptions,
-  } from './elements';
+  } from './elements/index.d.ts';
   
   export interface StripeElements {
     /**

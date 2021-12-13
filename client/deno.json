@@ -9,7 +9,8 @@
       "deno.ns",
       "deno.unstable"
     ],
-    "jsx": "react"
+    "jsx": "react",
+    "tsx": "react"
   },
   "lint": {},
   "format": {}

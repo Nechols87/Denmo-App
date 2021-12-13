@@ -1,4 +1,4 @@
-import {SetupIntentConfirmParams} from '../api';
+import {SetupIntentConfirmParams} from '../api/setup-intents.d.ts';
 
 import {
   CreatePaymentMethodAcssDebitData,
@@ -12,7 +12,7 @@ import {
   CreatePaymentMethodBacsDebitData,
 } from './payment-intents.d.ts';
 
-import {Omit} from '../utils';
+import {Omit} from '../utils.d.ts';
 
 /**
  * Data to be sent with a `stripe.confirmCardSetup` request.

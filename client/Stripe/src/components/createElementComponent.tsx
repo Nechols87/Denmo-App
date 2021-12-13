@@ -1,9 +1,10 @@
 // Must use `import *` or named imports for React's types
+
 import React, {FunctionComponent} from 'react';
 import * as stripeJs from '../js/types/stripe-js/index.d.ts';
 
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import {useElementsContextWithUseCase} from './Elements.tsx';
 import {useCallbackReference} from '../utils/useCallbackReference.ts';
@@ -114,16 +115,28 @@ const createElementComponent = (
 
   const Element = isServer ? ServerElement : ClientElement;
 
-  Element.propTypes = {
-    id: PropTypes.string,
-    className: PropTypes.string,
-    onChange: PropTypes.func,
-    onBlur: PropTypes.func,
-    onFocus: PropTypes.func,
-    onReady: PropTypes.func,
-    onClick: PropTypes.func,
-    options: PropTypes.object as any,
-  };
+  // Element.propTypes = {
+  //   id: PropTypes.string,
+  //   className: PropTypes.string,
+  //   onChange: PropTypes.func,
+  //   onBlur: PropTypes.func,
+  //   onFocus: PropTypes.func,
+  //   onReady: PropTypes.func,
+  //   onClick: PropTypes.func,
+  //   options: PropTypes.object as any,
+  // };
+
+  interface Element {
+    id: string,
+    className: string,
+    onChange: Function,
+    onBlur: Function,
+    onFocus: Function,
+    onReady: Function,
+    onClick: Function,
+    options: object
+
+  }
 
   Element.displayName = displayName;
   (Element as any).__elementType = type;

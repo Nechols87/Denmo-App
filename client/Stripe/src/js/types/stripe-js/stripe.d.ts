@@ -1,8 +1,8 @@
-import * as api from '../api';
+import * as api from '../api/index.d.ts';
 import * as paymentIntents from './payment-intents.d.ts';
 import * as setupIntents from './setup-intents.d.ts';
 import * as tokens from './token-and-sources.d.ts';
-import * as elements from './elements';
+import * as elements from './index.d.ts';
 
 import {StripeElements, StripeElementsOptions} from './elements-group.d.ts';
 import {RedirectToCheckoutOptions} from './checkout.d.ts';

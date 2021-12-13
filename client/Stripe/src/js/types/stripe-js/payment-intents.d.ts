@@ -8,9 +8,9 @@ import {
     StripeCardNumberElement,
     StripeCardElement,
     StripeAuBankAccountElement,
-  } from './elements';
-  import {PaymentMethodCreateParams, PaymentIntentConfirmParams} from '../api';
-  import {Omit} from '../utils';
+  } from './elements/index.d.ts';
+  import {PaymentMethodCreateParams, PaymentIntentConfirmParams} from '../api/index.d.ts';
+  import {Omit} from '../utils.d.ts';
   
   export type CreatePaymentMethodData =
     | CreatePaymentMethodAcssDebitData

@@ -1,5 +1,5 @@
-export * from './api';
-export * from './stripe-js';
+// export * from './api';
+// export * from './stripe-js';
 
 import {StripeConstructor, StripeConstructorOptions, Stripe} from './stripe-js/stripe.d.ts';
 

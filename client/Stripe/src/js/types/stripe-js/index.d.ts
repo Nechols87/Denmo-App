@@ -1,5 +1,5 @@
 export * from './checkout.d.ts';
-// export * from './elements';
+export * from './elements/index.d.ts';
 export * from './elements-group.d.ts';
 export * from './payment-intents.d.ts';
 export * from './payment-request.d.ts';
