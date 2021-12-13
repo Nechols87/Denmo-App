@@ -11,6 +11,7 @@ const stripePromise = loadStripe('pk_live_51K1e8PLiNZPLhmx7qmW0uSiT90KLEUhWdSbYS
 //   // passing the client secret obtained from the server
 //   clientSecret: '{{CLIENT_SECRET}}',
 // };
+///adding this
 
 
   return (
